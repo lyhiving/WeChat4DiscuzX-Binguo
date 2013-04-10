@@ -1,0 +1,52 @@
+{template common/header}
+
+
+<center>
+<br/>
+<h2>{$title}</h2>
+<br/>
+<article class="content">
+{$content}
+</article>
+<br/>
+<br/>
+<!-- 将此标记放在您希望显示like按钮的位置 -->
+<div class="bdlikebutton"></div>
+<br/>
+</center>
+
+<div class="comment">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+</div>
+<!-- Baidu Button BEGIN -->
+
+
+<!-- 将此代码放在适当的位置，建议在body结束前 -->
+<script id="bdlike_shell"></script>
+<script>
+var bdShare_config = {
+	"type":"large",
+	"color":"blue",
+	"uid":"6604157",
+	"share":"yes"
+};
+document.getElementById("bdlike_shell").src="http://bdimg.share.baidu.com/static/js/like_shell.js?t=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- 将此代码放在适当的位置，建议在body结束前 -->
+<script id="bdimgshare_shell"></script>
+<script>
+var bdShare_config_imgshare = {
+	"type":"list"
+	,"size":"big"
+	,"pos":"top"
+	,"color":"white"
+	,"list":["qzone","tsina","tqq","renren","t163"]
+	,"uid":"6604157"
+};
+document.getElementById("bdimgshare_shell").src="http://bdimg.share.baidu.com/static/js/imgshare_shell.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+
+{template common/footer}

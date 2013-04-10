@@ -1,0 +1,89 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>{$title}</title>
+<link rel="stylesheet" href="source/plugin/cloud_wx/template/js/boilerplate.css" />
+<script src="source/plugin/cloud_wx/template/js/respond.min.js"></script>
+<!--[if lte IE 9]> <script src="source/plugin/cloud_wx/template/js/html5.js"></script> <![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<link rel="stylesheet" href="source/plugin/cloud_wx/template/js/jquery.mobile-1.3.0-beta.1.min.css" />
+<script src="source/plugin/cloud_wx/template/js/jquery-1.8.3.min.js"></script>
+<script src="source/plugin/cloud_wx/template/js/jquery.mobile-1.3.0-beta.1.min.js"></script>
+<style>
+img{max-width:100%;}
+body{font-family:"微软雅黑",MicroSoft YaHei,Yahei,Arial;background:＃FFF ; color:#FFF; text-shadow:none;}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+
+ $(document).ready(function(){
+      $(document).bind("swipeleft", function(event) {
+		  		//event.preventDefault();
+			  window.location.href="plugin.php?id=cloud_wx:view&tid={$rand}";
+      });  
+    });
+ 
+</script>
+<div data-role="page">
+
+<div data-role="header" data-fullscreen="true" data-position="fixed" >
+<div data-role="collapsible" data-collapsed="true" data-theme="b" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+				<h3>{$title}</h3>
+                <p>{$from}</p>
+                <p>发布于：{$time} 共有 {$comment} 条回帖</p>
+			</div><!-- /collapsible -->
+
+	</div><!-- /header -->
+	
+	<div data-role="content" style="margin:10% 5%; ">	
+    <center>
+    <br/><br/>
+	<p>{$content}</p>
+    <br/>
+	</center>
+	</div><!-- /content -->
+<div id="overlay" data-role="popup" data-overlay-theme="a" data-position-to="window" class="ui-content">
+		  <p><center>{$avatar}<br/>UID:{$uid}<br/>{$author}</center></p>
+		</div>
+<div data-role="footer" data-iconpos="bottom" data-fullscreen="true" data-position="fixed">
+		
+  <div data-role="navbar" >
+			<ul>
+            	<li><a href="#popup" data-role="button" data-icon="edit" data-theme="a" data-mini="true" data-rel="dialog" data-transition="pop">评论</a></li>
+				<li><a href="plugin.php?id=cloud_wx:view&tid={$rand}" data-icon="refresh" class="ui-btn-active">逛逛</a></li>
+				<li><a href="#overlay" data-position-to="window" data-rel="popup" data-icon="info" data-role="button" data-inline="true">作者</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<div data-role="page" id="popup">
+
+	<div data-role="header" data-theme="a">
+		<h1>评论</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+<div class="ui-body ui-body-a">
+   <div id="uyan_frame" class="ui-body ui-body-d">
+<!-- UY BEGIN -->
+<!-- UY END -->
+    </div>
+  <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>   
+    </div>
+	</div><!-- /content -->
+	
+	
+   
+   </div>
+</body>
+</html>

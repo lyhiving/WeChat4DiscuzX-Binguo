@@ -1,0 +1,28 @@
+<!--{block show}-->
+<script src="source/plugin/cloud_wx/template/js/jquery-1.8.3.min.js"></script>
+<style type="text/css">
+#overlay{width:100%; position:fixed; top:0; bottom:0; left:0; right:0; z-index:999; background:#000; display:none;}
+#boxmsg{width:600px; margin:10% auto; background:#FFF; color:#000; padding:15px 20px; z-index:9999;}
+#showmsg{position:fixed; left:15px; top:356px; z-index:99; display:block; cursor:pointer;}
+</style>
+<script type="text/javascript">
+var jq = jQuery.noConflict();
+jq(function(){
+	jq('#showmsg').click(function(){
+		jq('#boxmsg').html('<center><br/><img src=\"{$set['CODEIMG']}\"/><br/><img src=\"source/plugin/cloud_wx/template/images/welcome.gif\"/></center>');
+		jq('#overlay').fadeToggle('slow');
+		});
+	jq('#overlay').click(function(){
+		jq('#overlay').fadeOut('slow');
+		});
+});
+ 
+ </script>
+ <a id="showmsg"><img src="source/plugin/cloud_wx/template/images/show.png"/></a>
+<div id="overlay">
+<div id="boxmsg"></div>
+</div>
+
+
+<!--Author YangLin QQ:28945763  问题解答技术交流QQ群：294440459  http://open.binguo.me -->
+<!--{/block}-->
